@@ -1,0 +1,26 @@
+/* Font source: Google Fonts, DM Sans and Outfit. Both use SIL Open Font License 1.1.
+   https://github.com/google/fonts/tree/main/ofl/dmsans
+   https://github.com/google/fonts/tree/main/ofl/outfit */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap');
+
+@import url('./foundation/variables.css');
+@import url('./foundation/reset.css');
+@import url('./foundation/typography.css');
+@import url('./foundation/utilities.css');
+
+@import url('./layout/container.css');
+@import url('./layout/grid.css');
+@import url('./layout/sections.css');
+@import url('./layout/responsive.css');
+
+@import url('./components/buttons.css');
+@import url('./components/navbar.css');
+@import url('./components/footer.css');
+@import url('./components/typography.css');
+@import url('./components/cards.css');
+@import url('./components/badges.css');
+@import url('./components/inputs.css');
+@import url('./components/icons.css');
+
+@import url('./pages/home.css');
+@import url('./experience.css');

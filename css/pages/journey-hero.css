@@ -1,0 +1,20 @@
+/* Shared interior-page composition, based on the original Jejak page language. */
+.journey-crumb { display: flex; align-items: center; gap: 4px; min-height: 36px; color: var(--color-teal); font-size: 14px; }
+.journey-crumb a, .journey-crumb span { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 6px 4px; text-decoration: none; }
+.journey-crumb a { color: var(--teal-70); }
+.journey-crumb a:hover { color: var(--color-teal); text-decoration: underline; }
+.journey-crumb span { font-weight: 700; }
+.journey-crumb svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.journey-crumb .journey-crumb__chev { width: 14px; height: 14px; color: var(--teal-70); }
+.journey-hero__layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 64px); align-items: center; padding: 28px 0 36px; }
+.lab-hero .journey-hero__layout h1, .aksi-hero .journey-hero__layout h1 { max-width: 17ch; margin: 0 0 22px; font-size: clamp(36px, 3.3vw, 54px); line-height: 1.04; letter-spacing: -.025em; }
+.lab-hero .journey-hero__layout p, .aksi-hero .journey-hero__layout p { max-width: 45ch; margin: 0 0 28px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55; }
+.journey-hero__art { min-width: 0; margin: 0; border: 1px solid var(--teal-08); border-radius: 28px; background: var(--teal-04); overflow: hidden; }
+.journey-hero__art svg { display: block; width: 100%; height: auto; }
+.journey-hero__art svg text { fill: var(--color-teal); font-family: inherit; font-size: 16px; font-weight: 700; }
+.journey-hero__art svg rect + text { fill: var(--color-ivory); }
+.journey-hero__art figcaption { border-top: 1px solid var(--teal-08); padding: 16px 24px; color: var(--text-muted); font-size: 14px; }
+.lab-hero, .aksi-hero { padding-top: var(--hero-safe-top); padding-bottom: 28px; }
+.lab-work, .aksi-plan { padding-top: 28px; }
+@media (max-width: 800px) { .journey-hero__layout { grid-template-columns: minmax(0, 1fr); gap: 26px; } .journey-hero__art { max-width: 700px; } }
+@media (max-width: 520px) { .journey-hero__layout { padding: 22px 0 12px; gap: 24px; } .lab-hero .journey-hero__layout h1, .aksi-hero .journey-hero__layout h1 { font-size: clamp(34px, 9vw, 44px); } .journey-hero__art { border-radius: 18px; } .journey-hero__art figcaption { padding: 12px 16px; } }

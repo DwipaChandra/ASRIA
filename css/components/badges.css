@@ -1,0 +1,24 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.badge--lime {
+  background: var(--lime-20);
+  color: var(--color-teal);
+}
+
+.badge--teal {
+  background: var(--teal-08);
+  color: var(--color-teal);
+}
+
+.badge--outline {
+  border: 1px solid var(--teal-18);
+  color: var(--text-primary);
+}

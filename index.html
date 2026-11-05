@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASRIA. | Setiap perjalanan meninggalkan jejak.</title>
+  <meta name="description" content="ASRIA membantu kamu memahami, mengukur, dan mengubah jejak emisi dari perjalanan sehari-hari, dari kendaraan pribadi hingga transportasi umum." />
+  <link rel="icon" type="image/png" href="./media/asria-logo-navbar.png">
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/refinements.css" />
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">Langsung ke konten</a>
+
+  <header>
+    <nav class="navbar" aria-label="Navigasi utama">
+      <div class="navbar__inner">
+        <a href="./index.html" class="navbar__logo" aria-label="ASRIA, halaman utama"><img src="./media/asria-logo-navbar.png" alt="" width="48" height="48" decoding="async"></a>
+
+        <ul class="navbar__links">
+          <li><a href="./index.html" class="navbar__link is-active" aria-current="page">Home</a></li>
+          <li><a href="./pages/emisi.html" class="navbar__link">Emisi</a></li>
+          <li><a href="./pages/jejak.html" class="navbar__link">Jejak</a></li>
+          <li><a href="./pages/lab.html" class="navbar__link">Lab</a></li>
+          <li><a href="./pages/aksi.html" class="navbar__link">Aksi</a></li>
+        </ul>
+
+        <div class="navbar__right">
+          <div class="navbar__profile">
+            <button
+              class="navbar__avatar"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Buka menu profil"
+            >A</button>
+
+            <div class="navbar__dropdown" role="menu">
+              <a class="navbar__dropdown-item" role="menuitem" href="./pages/profile.html">
+                <svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+                Profile
+              </a>
+              <button class="navbar__dropdown-item" role="menuitem" type="button" data-action="logout">
+                <svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>
+                Logout
+              </button>
+            </div>
+          </div>
+
+          <button class="navbar__burger" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-navigation">
+            <svg viewBox="0 0 24 24" class="icon"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar__mobile-menu" id="mobile-navigation" aria-hidden="true" aria-label="Navigasi mobile">
+      <a href="./index.html" class="navbar__mobile-link">Home</a>
+      <a href="./pages/emisi.html" class="navbar__mobile-link">Emisi</a>
+      <a href="./pages/jejak.html" class="navbar__mobile-link">Jejak</a>
+      <a href="./pages/lab.html" class="navbar__mobile-link">Lab</a>
+      <a href="./pages/aksi.html" class="navbar__mobile-link">Aksi</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero on-dark">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__heading">
+            Ke mana pun kamu pergi,<br />
+            <span class="highlight--lime">jejak</span> ikut berjalan.
+          </h1>
+
+          <p class="hero__lead">
+            Rute yang sama bisa meninggalkan cerita berbeda. Lihat bagaimana kendaraan,
+            jarak, dan kebiasaan mengubah perkiraan jejakmu.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="./pages/jejak.html" class="btn btn--primary">
+              Ukur perjalananku
+              <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="./pages/emisi.html" class="btn btn--secondary">Pelajari Emisi</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__visual-top"><span data-map-distance>Rute contoh, 8 km sekali jalan</span><span>Simulasi, bukan peta lokasi nyata</span></div>
+          <div class="hero__map-wrap" data-hero-map tabindex="0" role="region" aria-label="Peta rute contoh. Saat diperbesar, geser peta atau gunakan tombol panah.">
+            <svg xmlns="http://www.w3.org/2000/svg" class="hero__map" viewBox="0 0 600 360" aria-hidden="true">
+              <rect width="600" height="360" fill="#174640"/>
+              <path d="M16 16h62v39H16zM112 18h122v38H112zM282 14h119v42H282zM456 18h116v38H456zM16 101h61v53H16zM113 102h117v51H113zM284 102h116v51H284zM456 103h116v49H456zM15 198h60v58H15zM113 200h119v57H113zM285 200h113v56H285zM457 199h114v58H457zM16 303h61v40H16zM113 303h119v40H113zM285 302h115v40H285zM457 303h115v40H457z" fill="#24554c"/>
+              <path d="M15 103h61v51H15zM284 200h114v56H284zM457 303h114v40H457z" fill="#416d55"/>
+              <g aria-hidden="true">
+                <rect class="map-building" x="132" y="112" width="40" height="26" rx="3"/>
+                <rect class="map-building" x="183" y="112" width="32" height="26" rx="3"/>
+                <rect class="map-building" x="300" y="25" width="80" height="22" rx="3"/>
+                <path d="M305 220h72v22h-72z" fill="#8da99c"/>
+                <circle cx="309" cy="209" r="9" fill="#88ae70"/>
+                <circle cx="377" cy="250" r="10" fill="#88ae70"/>
+                <text x="340" y="239" text-anchor="middle" fill="#123b36" font-size="12">Taman</text>
+              </g>
+              <path d="M0 78H600M0 176H600M0 280H600M95 0V360M260 0V360M430 0V360" fill="none" stroke="#8da99c" stroke-width="30"/>
+              <path d="M0 78H600M0 176H600M0 280H600M95 0V360M260 0V360M430 0V360" fill="none" stroke="#d9e3d4" stroke-width="19"/>
+              <path d="M20 78H62M130 78H220M294 78H393M458 78H570M20 176H62M130 176H220M294 176H393M458 176H570M20 280H62M130 280H220M294 280H393M458 280H570M95 18V48M95 115V145M95 205V250M260 18V48M260 105V145M260 210V250M430 18V48M430 110V145M430 205V250" fill="none" stroke="#45665c" stroke-width="2" stroke-dasharray="9 8"/>
+              <path d="M95 280H260V176H430V78H525" class="hero__route-base" fill="none" stroke="#123b36" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="hero__route-line" d="M95 280H260V176H430V78H525" fill="none" stroke="#d7ff3f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="95" cy="280" r="9" fill="#d7ff3f" stroke="#123b36" stroke-width="3"/>
+              <circle cx="525" cy="78" r="9" fill="#d7ff3f" stroke="#123b36" stroke-width="3"/>
+              <rect x="36" y="302" width="83" height="32" rx="5" fill="#123b36" stroke="#d7ff3f" stroke-width="2"/>
+              <rect x="478" y="24" width="85" height="32" rx="5" fill="#123b36" stroke="#d7ff3f" stroke-width="2"/>
+              <text x="46" y="323" fill="#f4f1e8" font-size="16" font-family="DM Sans, sans-serif">Rumah</text>
+              <text x="487" y="45" fill="#f4f1e8" font-size="16" font-family="DM Sans, sans-serif">Tujuan</text>
+              <g class="hero__map-mode hero__map-mode--car" transform="translate(269 176)">
+                <rect x="-14" y="-7" width="28" height="14" rx="4" fill="#f4f1e8" stroke="#123b36" stroke-width="2"/>
+                <rect x="-7" y="-5" width="13" height="10" rx="2" fill="#24554c"/>
+              </g>
+              <g class="hero__map-mode hero__map-mode--motorcycle" transform="translate(269 176)">
+                <circle cx="-10" cy="5" r="4" fill="#123b36" stroke="#f4f1e8" stroke-width="2"/>
+                <circle cx="10" cy="5" r="4" fill="#123b36" stroke="#f4f1e8" stroke-width="2"/>
+                <path d="M-10 5h8l5-10 7 10M-2-5h8" fill="none" stroke="#f4f1e8" stroke-width="3"/>
+              </g>
+              <g class="hero__map-mode hero__map-mode--walking" transform="translate(269 176)">
+                <circle cy="-11" r="4" fill="#f4f1e8"/>
+                <path d="M0-6V6m0-7-8 6m8-6 7 5M0 6l-7 12M0 6l8 12" fill="none" stroke="#f4f1e8" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="map-controls" role="group" aria-label="Jelajahi rute contoh">
+            <button type="button" data-map-route="short" aria-pressed="true">Rute langsung</button>
+            <button type="button" data-map-route="long" aria-pressed="false">Lewat taman</button>
+            <button type="button" data-map-zoom aria-pressed="false">Perbesar peta</button>
+            <button type="button" data-map-play aria-pressed="false">Putar perjalanan</button>
+          </div>
+          <div class="hero__probe">
+            <div class="hero__probe-intro"><span>Ubah kendaraan contoh</span><strong data-hero-value aria-live="polite">1,52 <small>kg CO₂e</small></strong></div>
+            <div class="hero__modes" role="group" aria-label="Pilih kendaraan untuk contoh rute">
+              <button type="button" data-hero-mode="car" aria-pressed="true">Mobil</button>
+              <button type="button" data-hero-mode="motorcycle" aria-pressed="false">Motor</button>
+              <button type="button" data-hero-mode="walking" aria-pressed="false">Jalan kaki</button>
+            </div>
+            <p data-hero-note>Contoh emisi langsung untuk satu perjalanan 8 km, satu orang.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory story">
+      <div class="container story__inner">
+        <div class="story__copy" data-reveal>
+          <h2>Yang kecil,<br />berulang jadi besar.</h2>
+          <p class="text-lead">
+            Satu perjalanan pendek terasa tidak berarti. Tetapi begitu kamu menjalaninya
+            setiap hari, dalam seminggu, sebulan, hingga setahun, jejaknya menumpuk jauh
+            lebih besar dari yang terlihat pada awalnya.
+          </p>
+        </div>
+
+        <div class="story__chain" data-reveal>
+          <div class="story__step">
+            <span class="story__step-value">8 KM</span>
+            <span class="story__step-label">satu kali perjalanan</span>
+          </div>
+          <div class="story__connector"></div>
+          <div class="story__step">
+            <span class="story__step-value">16 KM</span>
+            <span class="story__step-label">per hari, pulang pergi</span>
+          </div>
+          <div class="story__connector"></div>
+          <div class="story__step">
+            <span class="story__step-value">320 KM</span>
+            <span class="story__step-label">per bulan</span>
+          </div>
+          <div class="story__connector"></div>
+          <div class="story__step">
+            <span class="story__step-value highlight--lime">3.840 KM</span>
+            <span class="story__step-label">per tahun</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory" aria-labelledby="footprint-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="footprint-heading" class="section-head__title">Apa yang membentuk jejakmu?</h2>
+          <p class="text-lead">Empat hal ini yang paling menentukan besar kecilnya jejak emisi dari satu perjalanan.</p>
+        </div>
+
+        <div class="footprint__grid">
+          <article class="card flip-card">
+            <button class="flip-card__toggle" type="button" aria-expanded="false" aria-label="Lihat contoh kendaraan">
+              <span class="flip-card__inner"><span class="flip-card__face flip-card__front">
+            <span class="card__index" aria-hidden="true">01</span>
+            <span class="card__icon">
+              <svg class="icon icon--md" viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="8" rx="2"/><path d="M5 10l2-5h10l2 5"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="16.5" cy="18.5" r="1.5"/></svg>
+            </span>
+            <span class="card__title">Kendaraan</span>
+            <span class="card__desc">Jenis kendaraan yang kamu pakai memengaruhi besar jejak per kilometernya.</span>
+          <span class="flip-card__hint">Lihat contoh ↗</span></span>
+              <span class="flip-card__face flip-card__back" aria-hidden="true"><strong>Kendaraan</strong><span>Mobil, motor, bus, dan sepeda memiliki kebutuhan energi yang berbeda untuk rute yang sama.</span><span class="flip-card__hint">Kembali ↶</span></span></span>
+            </button>
+          </article>
+
+          <article class="card flip-card">
+            <button class="flip-card__toggle" type="button" aria-expanded="false" aria-label="Lihat contoh bahan bakar">
+              <span class="flip-card__inner"><span class="flip-card__face flip-card__front">
+            <span class="card__index" aria-hidden="true">02</span>
+            <span class="card__icon">
+              <svg class="icon icon--md" viewBox="0 0 24 24"><path d="M12 2c4 5 6 8 6 11a6 6 0 1 1-12 0c0-3 2-6 6-11z"/></svg>
+            </span>
+            <span class="card__title">Bahan bakar</span>
+            <span class="card__desc">Sumber energi kendaraan ikut menentukan besar kecilnya emisi yang dihasilkan.</span>
+          <span class="flip-card__hint">Lihat contoh ↗</span></span>
+              <span class="flip-card__face flip-card__back" aria-hidden="true"><strong>Bahan bakar</strong><span>Bensin, solar, dan listrik berasal dari sumber energi yang berbeda. Kenali sumbernya di halaman Emisi.</span><span class="flip-card__hint">Kembali ↶</span></span></span>
+            </button>
+          </article>
+
+          <article class="card flip-card">
+            <button class="flip-card__toggle" type="button" aria-expanded="false" aria-label="Lihat contoh jarak">
+              <span class="flip-card__inner"><span class="flip-card__face flip-card__front">
+            <span class="card__index" aria-hidden="true">03</span>
+            <span class="card__icon">
+              <svg class="icon icon--md" viewBox="0 0 24 24"><path d="M9 20l-5-2V6l5 2 6-2 5 2v12l-5-2-6 2z"/><path d="M9 6v14"/><path d="M15 8v14"/></svg>
+            </span>
+            <span class="card__title">Jarak</span>
+            <span class="card__desc">Semakin jauh perjalanan yang ditempuh, semakin besar jejak yang tertinggal.</span>
+          <span class="flip-card__hint">Lihat contoh ↗</span></span>
+              <span class="flip-card__face flip-card__back" aria-hidden="true"><strong>Jarak</strong><span>Delapan kilometer sekali jalan menjadi enam belas kilometer ketika kamu pulang melalui rute yang sama.</span><span class="flip-card__hint">Kembali ↶</span></span></span>
+            </button>
+          </article>
+
+          <article class="card flip-card">
+            <button class="flip-card__toggle" type="button" aria-expanded="false" aria-label="Lihat contoh frekuensi">
+              <span class="flip-card__inner"><span class="flip-card__face flip-card__front">
+            <span class="card__index" aria-hidden="true">04</span>
+            <span class="card__icon">
+              <svg class="icon icon--md" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M3 10h18"/></svg>
+            </span>
+            <span class="card__title">Frekuensi</span>
+            <span class="card__desc">Perjalanan yang sama, jika terus berulang, ikut menumpuk jejaknya seiring waktu.</span>
+          <span class="flip-card__hint">Lihat contoh ↗</span></span>
+              <span class="flip-card__face flip-card__back" aria-hidden="true"><strong>Frekuensi</strong><span>Perjalanan 16 km selama 20 hari berarti 320 km dalam sebulan. Ini contoh pola, bukan data perjalananmu.</span><span class="flip-card__hint">Kembali ↶</span></span></span>
+            </button>
+          </article>
+        </div>
+
+        <div class="footprint__formula" data-reveal>
+          <span>Perkiraan sederhana:</span>
+          <strong>jarak × faktor kendaraan × frekuensi ÷ penumpang</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory" aria-labelledby="reflect-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="reflect-heading" class="section-head__title">Hari ini kamu bagaimana?</h2>
+          <p class="text-lead">Pilih pola perjalanan yang paling menggambarkan harimu.</p>
+        </div>
+
+        <div class="reflect__grid" role="group" aria-label="Pilih pola perjalanan hari ini">
+          <button class="card card--select" type="button" data-pattern="sendiri" aria-pressed="false">
+            <span class="card__icon">
+              <svg class="icon icon--md" viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="8" rx="2"/><path d="M5 10l2-5h10l2 5"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="16.5" cy="18.5" r="1.5"/></svg>
+            </span>
+            <span class="card__title">Kendaraan sendiri</span>
+            <span class="card__desc">Bergerak dengan kendaraan pribadi untuk perjalananmu.</span>
+            <span class="card__meta">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              <span data-select-label>Pilih pola</span>
+            </span>
+          </button>
+
+          <button class="card card--select" type="button" data-pattern="bersama" aria-pressed="false">
+            <span class="card__icon">
+              <svg class="icon icon--md" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 21c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M13 21c.3-2.6 1.8-4.6 4-5.3"/></svg>
+            </span>
+            <span class="card__title">Berbagi perjalanan</span>
+            <span class="card__desc">Menempuh perjalanan yang sama bersama orang lain.</span>
+            <span class="card__meta">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              <span data-select-label>Pilih pola</span>
+            </span>
+          </button>
+
+          <button class="card card--select" type="button" data-pattern="umum" aria-pressed="false">
+            <span class="card__icon">
+              <svg class="icon icon--md" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 12h16"/><circle cx="8" cy="17.5" r="0.6"/><circle cx="16" cy="17.5" r="0.6"/></svg>
+            </span>
+            <span class="card__title">Transportasi umum</span>
+            <span class="card__desc">Naik bus, kereta, atau angkutan umum lainnya.</span>
+            <span class="card__meta">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              <span data-select-label>Pilih pola</span>
+            </span>
+          </button>
+
+          <button class="card card--select" type="button" data-pattern="jalan" aria-pressed="false">
+            <span class="card__icon">
+              <svg class="icon icon--md icon--travel-active" viewBox="0 0 72 48" aria-hidden="true"><circle cx="39" cy="9" r="5" fill="currentColor" stroke="none"/><path d="M39 16v14m0-9-11 10m11-10 10 8M39 30 28 45m11-15 12 15" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="card__title">Jalan kaki / sepeda</span>
+            <span class="card__desc">Bergerak tanpa mesin untuk jarak yang lebih dekat.</span>
+            <span class="card__meta">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              <span data-select-label>Pilih pola</span>
+            </span>
+          </button>
+        </div>
+
+        <div class="reflect__response" data-pattern-response>
+          <div class="reflect__response-text">
+            <span class="reflect__response-label">Hari ini adalah awal yang baik</span>
+            <p data-pattern-response-text>Sekarang lihat seperti apa jejak perjalananmu.</p>
+          </div>
+          <a href="./pages/jejak.html" class="btn btn--primary">
+            Hitung Jejakku
+            <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory" aria-labelledby="calc-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="calc-heading" class="section-head__title">Ukur perjalananmu.</h2>
+          <p class="text-lead">Geser jarak dan pilih jenis perjalanan untuk melihat gambaran akumulasinya.</p>
+        </div>
+
+        <div class="calc">
+          <div>
+            <label class="calc__field-label" for="calc-distance">Jarak satu kali perjalanan</label>
+            <div class="calc__row">
+              <input type="range" min="1" max="60" value="8" class="calc__input" id="calc-distance" aria-describedby="calc-distance-value" />
+              <span class="calc__value" id="calc-distance-value">8 KM</span>
+            </div>
+
+            <span class="calc__field-label">Jenis perjalanan</span>
+            <div class="calc__toggle" role="group" aria-label="Jenis perjalanan">
+              <button type="button" class="calc__toggle-btn is-active" data-trip="one-way" aria-pressed="true">Sekali jalan</button>
+              <button type="button" class="calc__toggle-btn" data-trip="round" aria-pressed="false">Pulang-pergi</button>
+            </div>
+          </div>
+
+          <div class="calc__result">
+            <div class="calc__result-row">
+              <span class="calc__result-label">Per hari</span>
+              <span class="calc__result-value" data-result="day">8 KM</span>
+            </div>
+            <div class="calc__result-row">
+              <span class="calc__result-label">Per bulan</span>
+              <span class="calc__result-value" data-result="month">160 KM</span>
+            </div>
+            <div class="calc__result-row">
+              <span class="calc__result-label">Per tahun</span>
+              <span class="calc__result-value" data-result="year">1.920 KM</span>
+            </div>
+            <a href="./pages/jejak.html" class="btn btn--primary btn--block calc__cta">
+              Ukur jejakmu
+              <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <p class="text-small text-faint mt-md">
+          Ilustrasi jarak dengan asumsi 20 hari perjalanan per bulan dan 12 bulan per tahun.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--ivory why" aria-labelledby="why-heading">
+      <div class="container why__grid">
+        <div data-reveal>
+          <h2 id="why-heading">Kenapa ASRIA?</h2>
+          <p class="text-lead why__lead">
+            Karena jejak emisi sering terasa jauh dari perjalanan kita sendiri. ASRIA membawa
+            persoalan yang besar menjadi sesuatu yang personal.
+          </p>
+        </div>
+
+        <div class="why__flow" data-reveal>
+          <article class="why__flow-step">
+            <span class="why__flow-index" aria-hidden="true">01</span>
+            <div>
+              <p class="why__flow-title">Perjalanan</p>
+              <p class="why__flow-desc">Aktivitas harian yang kamu jalani, sekecil apa pun.</p>
+            </div>
+          </article>
+
+          <div class="why__flow-line"></div>
+
+          <article class="why__flow-step">
+            <span class="why__flow-index" aria-hidden="true">02</span>
+            <div>
+              <p class="why__flow-title">Jejak</p>
+              <p class="why__flow-desc">Kumpulan perjalanan yang sama, terus berulang.</p>
+            </div>
+          </article>
+
+          <div class="why__flow-line"></div>
+
+          <article class="why__flow-step why__flow-step--active">
+            <span class="why__flow-index" aria-hidden="true">03</span>
+            <div>
+              <p class="why__flow-title">Pilihan</p>
+              <p class="why__flow-desc">Bagian yang bisa kamu ubah, mulai hari ini.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark on-dark" aria-labelledby="how-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="how-heading" class="section-head__title">Bagaimana ASRIA bekerja.</h2>
+        </div>
+
+        <div class="journey__path">
+          <article class="journey__step flip-card">
+            <button type="button" class="flip-card__toggle" aria-expanded="false" aria-label="Lihat langkah kenali"><span class="flip-card__inner">
+              <span class="flip-card__face flip-card__front">
+            <span class="journey__step-index">01</span>
+            <span class="journey__step-title">Kenali</span>
+            <span class="journey__step-desc">Pahami bagaimana emisi terbentuk dari perjalanan sehari-hari.</span>
+          <span class="flip-card__hint">Jelajahi langkah ↗</span></span>
+              <span class="flip-card__face flip-card__back" aria-hidden="true"><strong>Kenali</strong><span>Kenali sumber emisi melalui bagian kendaraan.</span><span class="flip-card__hint">Kembali ↶</span></span>
+            </span></button><a class="journey__open" href="./pages/emisi.html">Buka Kenali →</a>
+          </article>
+          <article class="journey__step flip-card">
+            <button type="button" class="flip-card__toggle" aria-expanded="false" aria-label="Lihat langkah ukur"><span class="flip-card__inner">
+              <span class="flip-card__face flip-card__front">
+            <span class="journey__step-index">02</span>
+            <span class="journey__step-title">Ukur</span>
+            <span class="journey__step-desc">Hitung jejak dari perjalananmu sendiri.</span>
+          <span class="flip-card__hint">Jelajahi langkah ↗</span></span>
+              <span class="flip-card__face flip-card__back" aria-hidden="true"><strong>Ukur</strong><span>Pilih kendaraan, jarak, frekuensi, dan penumpang.</span><span class="flip-card__hint">Kembali ↶</span></span>
+            </span></button><a class="journey__open" href="./pages/jejak.html">Buka Ukur →</a>
+          </article>
+          <article class="journey__step flip-card">
+            <button type="button" class="flip-card__toggle" aria-expanded="false" aria-label="Lihat langkah eksperimen"><span class="flip-card__inner">
+              <span class="flip-card__face flip-card__front">
+            <span class="journey__step-index">03</span>
+            <span class="journey__step-title">Eksperimen</span>
+            <span class="journey__step-desc">Coba skenario perjalanan yang berbeda.</span>
+          <span class="flip-card__hint">Jelajahi langkah ↗</span></span>
+              <span class="flip-card__face flip-card__back" aria-hidden="true"><strong>Eksperimen</strong><span>Bandingkan pilihan dan lihat bagaimana jejak berubah.</span><span class="flip-card__hint">Kembali ↶</span></span>
+            </span></button><a class="journey__open" href="./pages/lab.html">Buka Eksperimen →</a>
+          </article>
+          <article class="journey__step flip-card">
+            <button type="button" class="flip-card__toggle" aria-expanded="false" aria-label="Lihat langkah aksi"><span class="flip-card__inner">
+              <span class="flip-card__face flip-card__front">
+            <span class="journey__step-index">04</span>
+            <span class="journey__step-title">Aksi</span>
+            <span class="journey__step-desc">Buat perubahan kecil yang realistis.</span>
+          <span class="flip-card__hint">Jelajahi langkah ↗</span></span>
+              <span class="flip-card__face flip-card__back" aria-hidden="true"><strong>Aksi</strong><span>Pilih langkah kecil, lalu catat saat sudah kamu coba.</span><span class="flip-card__hint">Kembali ↶</span></span>
+            </span></button><a class="journey__open" href="./pages/aksi.html">Buka Aksi →</a>
+          </article>
+        </div>
+
+        <div class="journey__cta">
+          <a href="./pages/jejak.html" class="btn btn--primary">
+            Lihat Jejakku
+            <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory" aria-labelledby="faq-heading">
+      <div class="container faq__grid">
+        <div class="faq__head" data-reveal>
+          <h2 id="faq-heading">Masih ada yang ingin kamu tahu?</h2>
+          <p class="text-lead">Beberapa hal dasar sebelum kamu mulai mengukur perjalananmu.</p>
+        </div>
+
+        <div class="faq__list">
+          <article class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false">
+              Apa itu ASRIA?
+              <span class="faq__icon">
+                <svg class="icon icon--plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                <svg class="icon icon--minus" viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>ASRIA adalah pengalaman digital untuk membantu pengguna memahami hubungan antara perjalanan sehari-hari, kendaraan, jarak, dan jejak emisi.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false">
+              Kenapa perjalanan sehari-hari perlu dihitung?
+              <span class="faq__icon">
+                <svg class="icon icon--plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                <svg class="icon icon--minus" viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>Karena perjalanan yang terlihat kecil dapat terakumulasi ketika terjadi berulang kali.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false">
+              Apa yang memengaruhi jejak emisi?
+              <span class="faq__icon">
+                <svg class="icon icon--plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                <svg class="icon icon--minus" viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>Jarak, frekuensi perjalanan, jenis kendaraan, bahan bakar, dan pola perjalanan dapat memengaruhi estimasi jejak emisi.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false">
+              Apakah angka di ASRIA merupakan angka pasti?
+              <span class="faq__icon">
+                <svg class="icon icon--plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                <svg class="icon icon--minus" viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>Tidak. Kalkulator ASRIA menggunakan faktor contoh untuk edukasi. Penjelasan rumus dan batasannya tersedia melalui tombol “Lihat Cara Menghitung” di halaman Jejak.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark on-dark" aria-labelledby="pulse-heading">
+      <div class="container pulse">
+        <div data-reveal>
+          <h2 id="pulse-heading">Satu perjalanan.<br />Satu perubahan.</h2>
+          <p class="text-lead pulse__lead">Pilih satu kebiasaan perjalanan yang ingin kamu ubah.</p>
+        </div>
+
+        <div data-reveal>
+          <div class="pulse__options" role="group" aria-label="Pilih satu perubahan">
+            <button class="pulse__option" type="button" data-pulse="kurangi" aria-pressed="false">Kurangi perjalanan</button>
+            <button class="pulse__option" type="button" data-pulse="berbagi" aria-pressed="false">Berbagi perjalanan</button>
+            <button class="pulse__option" type="button" data-pulse="umum" aria-pressed="false">Gunakan transportasi umum</button>
+            <button class="pulse__option" type="button" data-pulse="jalan" aria-pressed="false">Jalan kaki / sepeda</button>
+          </div>
+          <p class="pulse__feedback" data-pulse-feedback></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory" aria-labelledby="challenge-heading">
+      <div class="container">
+        <div class="challenge on-dark">
+          <div data-reveal>
+            <h2 id="challenge-heading">7 langkah menuju perubahan</h2>
+            <p class="challenge__desc">
+              Amati satu rutinitas, coba pilihan lain, lalu catat langkah yang benar-benar kamu lakukan di Aksi.
+            </p>
+            <a href="./pages/aksi.html" class="btn btn--secondary">
+              Buat Perubahan
+              <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <div class="challenge__card" data-reveal>
+            <p class="challenge__label" data-challenge-label>LANGKAH 00 / 07</p>
+            <div class="challenge__progress-track">
+              <div class="challenge__progress-bar" data-challenge-bar></div>
+            </div>
+            <p class="challenge__status" data-challenge-status>Belum dimulai</p>
+            <button class="btn btn--primary btn--block" type="button" data-challenge-start>Mulai mencatat</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta section--ivory" aria-labelledby="final-cta-heading">
+      <div class="container final-cta__inner">
+        <h2 id="final-cta-heading">Mulai dari satu perjalanan.</h2>
+        <p class="text-lead final-cta__lead">
+          Ukur jejak perjalananmu dan lihat bagaimana perubahan kecil dapat mengubah skenarionya.
+        </p>
+        <a href="./pages/jejak.html" class="btn btn--primary">
+          Hitung Jejakku
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-logo">ASRIA.</p>
+          <p class="footer__tagline">Setiap perjalanan meninggalkan jejak.</p>
+        </div>
+
+        <nav aria-label="Navigasi footer">
+          <p class="footer__heading">Jelajahi</p>
+          <ul class="footer__list">
+            <li><a href="./index.html" class="footer__link">Home</a></li>
+            <li><a href="./pages/emisi.html" class="footer__link">Emisi</a></li>
+            <li><a href="./pages/jejak.html" class="footer__link">Jejak</a></li>
+            <li><a href="./pages/lab.html" class="footer__link">Lab</a></li>
+            <li><a href="./pages/aksi.html" class="footer__link">Aksi</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__about">
+          <p class="footer__heading">Tentang proyek</p>
+          <p>ASRIA mengajakmu membaca pola perjalanan dan mencoba perubahan yang masuk akal.</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 ASRIA. Seluruh hak dilindungi.</p>
+        <span class="footer__status">Belajar dari perjalanan sehari-hari.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

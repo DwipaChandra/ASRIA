@@ -1,0 +1,56 @@
+.on-dark {
+  color: var(--text-inverse);
+}
+
+.on-dark p {
+  color: var(--ivory-60);
+}
+
+.on-dark h1,
+.on-dark h2,
+.on-dark h3 {
+  color: var(--text-inverse);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.mt-sm {
+  margin-top: var(--space-2xs);
+}
+
+.mt-md {
+  margin-top: var(--space-sm);
+}
+
+.text-faint {
+  color: var(--teal-70);
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

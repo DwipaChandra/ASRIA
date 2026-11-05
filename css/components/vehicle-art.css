@@ -1,0 +1,435 @@
+/*
+ * Vehicle illustration system ("jv-*").
+ * Reused verbatim from css/pages/jejak.css , the ASRIA vehicle/human/route
+ * illustration family (source of truth: pages/jejak.html + js/pages/jejak-scene.js).
+ * Kept as its own component file so other pages (e.g. Lab) can reuse the exact
+ * same car/motor/bus/train/bicycle/walking + rider glyphs and animation
+ * language without duplicating or forking the Jejak page styles.
+ * Do not edit the rules below independently of css/pages/jejak.css , the two
+ * are meant to stay identical.
+ */
+
+.jv-scene {
+  --p: 0.4;
+  --len: calc(var(--p) * 700px);
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.jv-theme-dark,
+.jk-vopt__input:checked + .jk-vopt__card {
+  --v-body-fill: var(--ivory-12);
+  --v-body-stroke: var(--ivory-60);
+  --v-glass-fill: var(--ivory-14);
+  --v-glass-stroke: var(--ivory-16);
+  --v-detail: var(--ivory-16);
+  --v-tire-fill: var(--color-teal);
+  --v-tire-stroke: var(--ivory-60);
+  --v-rim: var(--ivory-40);
+  --v-spoke: var(--ivory-16);
+  --v-hub: var(--color-lime);
+  --v-accent: var(--color-lime);
+  --v-person: var(--ivory-90);
+  --v-line: var(--ivory-60);
+  --v-lamp: var(--color-lime);
+  --v-plus-bg: var(--color-lime);
+  --v-plus-ink: var(--color-teal);
+  --v-road: var(--ivory-16);
+  --v-puff: var(--ivory-60);
+  --v-lane-track: var(--ivory-16);
+  --v-lane-run: var(--color-lime);
+  --v-node-fill: var(--color-teal);
+  --v-node-stroke: var(--color-lime);
+  --v-label: var(--ivory-60);
+  --v-tag-bg: var(--color-lime);
+  --v-tag-ink: var(--color-teal);
+}
+
+.jv-theme-light,
+.jk-vopt__card,
+.jk-row__glyph {
+  --v-body-fill: var(--color-teal);
+  --v-body-stroke: var(--color-teal);
+  --v-glass-fill: var(--color-ivory);
+  --v-glass-stroke: transparent;
+  --v-detail: var(--ivory-40);
+  --v-tire-fill: var(--color-teal);
+  --v-tire-stroke: var(--color-teal);
+  --v-rim: var(--ivory-40);
+  --v-spoke: var(--ivory-40);
+  --v-hub: var(--color-lime);
+  --v-accent: var(--color-lime);
+  --v-person: var(--color-teal);
+  --v-line: var(--color-teal);
+  --v-lamp: var(--color-lime);
+  --v-plus-bg: var(--color-lime);
+  --v-plus-ink: var(--color-teal);
+  --v-road: var(--teal-18);
+  --v-puff: var(--teal-40);
+  --v-lane-track: var(--teal-18);
+  --v-lane-run: var(--color-teal);
+  --v-node-fill: var(--color-lime);
+  --v-node-stroke: var(--color-teal);
+  --v-label: var(--teal-70);
+  --v-tag-bg: var(--color-lime);
+  --v-tag-ink: var(--color-teal);
+}
+
+.jv-road {
+  fill: none;
+  stroke: var(--v-road);
+  stroke-width: 2;
+  stroke-dasharray: 10 14;
+  stroke-linecap: round;
+  animation: jv-road 3s linear infinite;
+}
+
+.jv {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-18px);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out),
+              visibility 0s linear var(--dur-slow);
+}
+
+.jv.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out),
+              visibility 0s;
+}
+
+.is-placeholder .jv.is-active {
+  opacity: 0.38;
+}
+
+.jv-drive {
+  animation: jv-drift 7s ease-in-out infinite;
+}
+
+.jv-body {
+  fill: var(--v-body-fill);
+  stroke: var(--v-body-stroke);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.jv-arch {
+  fill: none;
+  stroke: var(--v-body-stroke);
+  stroke-width: 2;
+}
+
+.jv-glass {
+  fill: var(--v-glass-fill);
+  stroke: var(--v-glass-stroke);
+  stroke-width: 1.5;
+}
+
+.jv-detail {
+  fill: none;
+  stroke: var(--v-detail);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.jv-accent {
+  fill: none;
+  stroke: var(--v-accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.jv-handle {
+  fill: none;
+  stroke: var(--v-detail);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.jv-lamp {
+  fill: var(--v-lamp);
+}
+
+.jv-line {
+  fill: none;
+  stroke: var(--v-line);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.jv-line--thin {
+  stroke-width: 2;
+}
+
+.jv-ring {
+  fill: none;
+  stroke: var(--v-line);
+  stroke-width: 3;
+}
+
+.jv-tire {
+  fill: var(--v-tire-fill);
+  stroke: var(--v-tire-stroke);
+  stroke-width: 2;
+}
+
+.jv-tire--ring {
+  fill: none;
+  stroke: var(--v-line);
+  stroke-width: 5;
+}
+
+.jv-rim {
+  fill: none;
+  stroke: var(--v-rim);
+  stroke-width: 2;
+}
+
+.jv-tire--ring ~ .jv-rim {
+  stroke: none;
+}
+
+.jv-spoke {
+  stroke: var(--v-spoke);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.jv-spoke--fine {
+  stroke: var(--v-line);
+  stroke-width: 1.2;
+  opacity: 0.7;
+}
+
+.jv-hub {
+  fill: var(--v-hub);
+}
+
+.jv-wheel {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: jv-spin 5s linear infinite;
+}
+
+.jv-person {
+  fill: var(--v-person);
+}
+
+.jv-limb {
+  fill: none;
+  stroke: var(--v-person);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.jv-p {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+}
+
+.jv-p.is-on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.jv-plus-pill {
+  fill: var(--v-plus-bg);
+}
+
+.jv-plus-text {
+  fill: var(--v-plus-ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.jv-stride {
+  transform-origin: 410px 264px;
+  animation: jv-stride 1.1s ease-in-out infinite alternate;
+}
+
+.jv-stride--b {
+  animation-direction: alternate-reverse;
+}
+
+.jv-puff {
+  fill: var(--v-puff);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: jv-puff 3.4s ease-out infinite;
+}
+
+.jv-glyph {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.jv-glyph .jv {
+  transform: none;
+}
+
+.jv-glyph .jv-drive,
+.jv-glyph .jv-wheel,
+.jv-glyph .jv-stride,
+.jv-glyph .jv-puff {
+  animation: none;
+}
+
+.jv-glyph .jv-puffs {
+  display: none;
+}
+
+.jv-glyph .jv-p {
+  opacity: 1;
+  transform: none;
+}
+
+.jv-glyph .jv-p--plus,
+.jv-glyph [data-seat]:not([data-seat="0"]) {
+  display: none;
+}
+
+.jv-route .jv-label {
+  fill: var(--v-label);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+
+.jv-label--end {
+  transform: translateX(var(--len));
+  transition: transform var(--dur-slow) var(--ease-out), opacity var(--dur-slow) var(--ease-out);
+}
+
+.jv-lane {
+  opacity: 0.16;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+
+.jv-lane.is-on {
+  opacity: 1;
+}
+
+.jv-lane.is-hidden {
+  opacity: 0;
+}
+
+.jv-lane-track {
+  stroke: var(--v-lane-track);
+  stroke-width: 2;
+  stroke-dasharray: 3 7;
+  stroke-linecap: round;
+}
+
+.jv-lane-run {
+  stroke: var(--v-lane-run);
+  stroke-width: 3;
+  transform-origin: 60px 0;
+  transform: scaleX(0);
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.jv-node {
+  fill: var(--v-node-fill);
+  stroke: var(--v-node-stroke);
+  stroke-width: 2;
+}
+
+.jv-node--end {
+  transform: translateX(0);
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.has-route .jv-lane-run {
+  transform: scaleX(var(--p));
+}
+
+.has-route .jv-node--end {
+  transform: translateX(var(--len));
+}
+
+.jv-scene:not(.has-route) .jv-lane[data-lane="0"] {
+  opacity: 0.4;
+}
+
+.jv-scene:not(.has-route) .jv-node--end,
+.jv-scene:not(.has-route) .jv-tag,
+.jv-scene:not(.has-route) .jv-label--end {
+  opacity: 0;
+}
+
+.jv-tag {
+  transform: translate(calc(60px + var(--len) * 0.5), 404px);
+  transition: transform var(--dur-slow) var(--ease-out), opacity var(--dur-slow) var(--ease-out);
+}
+
+.jv-tag rect {
+  fill: var(--v-tag-bg);
+}
+
+.jv-tag text {
+  fill: var(--v-tag-ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.jv-lane.is-probe {
+  animation: jv-probe 4.8s ease-in-out infinite;
+}
+
+@keyframes jv-road {
+  to { stroke-dashoffset: 48; }
+}
+
+@keyframes jv-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(6px, -2px); }
+}
+
+@keyframes jv-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes jv-stride {
+  from { transform: rotate(-13deg); }
+  to { transform: rotate(13deg); }
+}
+
+@keyframes jv-puff {
+  0% { transform: translate(0, 0) scale(0.6); opacity: 0; }
+  20% { opacity: 0.5; }
+  100% { transform: translate(-34px, -14px) scale(1.7); opacity: 0; }
+}
+
+@keyframes jv-probe {
+  0%, 30% { opacity: 0.16; }
+  50%, 80% { opacity: 1; }
+  100% { opacity: 0.16; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jv-drive,
+  .jv-wheel,
+  .jv-road,
+  .jv-stride,
+  .jv-puff,
+  .jv-lane.is-probe {
+    animation: none !important;
+  }
+
+  .jv-puff {
+    opacity: 0.25;
+  }
+}

@@ -1,0 +1,217 @@
+.card {
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  background: var(--color-ivory);
+  border: 1px solid var(--teal-08);
+  transition: border-color var(--dur-base) var(--ease-out),
+              transform var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+
+.card:hover {
+  border-color: var(--teal-18);
+  box-shadow: var(--shadow-soft);
+}
+
+.card--dark {
+  background: var(--color-teal);
+  border-color: var(--ivory-14);
+  color: var(--color-ivory);
+}
+
+.card--dark p {
+  color: var(--ivory-60);
+}
+
+.card__index {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--teal-70);
+  margin-bottom: var(--space-sm);
+}
+
+.card--dark .card__index {
+  color: var(--ivory-80);
+}
+
+.card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: var(--teal-08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+}
+
+.card__icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-teal);
+}
+
+.card--dark .card__icon {
+  background: var(--ivory-08);
+}
+
+.card--dark .card__icon svg {
+  color: var(--color-lime);
+}
+
+.card__stat {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--space-2xs);
+  color: var(--text-primary);
+}
+
+.card--dark .card__stat {
+  color: var(--color-ivory);
+}
+
+.card__label {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.card--dark .card__label {
+  color: var(--ivory-60);
+}
+
+.card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.card--dark .card__title {
+  color: var(--color-ivory);
+}
+
+.card__desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 32ch;
+}
+
+.card--dark .card__desc {
+  color: var(--ivory-60);
+}
+
+.card--select {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2xs);
+  border: 1.5px solid var(--teal-12);
+  text-align: left;
+  width: 100%;
+}
+
+.card--select .card__icon {
+  width: 54px;
+  height: 54px;
+}
+
+.card--select .card__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.card--select:hover {
+  border-color: var(--teal-70);
+  transform: translateY(-3px);
+}
+
+.card--select.is-active {
+  border-color: var(--color-lime);
+  background: var(--lime-10);
+}
+
+.card--select.is-active .card__icon {
+  background: var(--color-lime);
+}
+
+.card--select.is-active .card__icon svg {
+  color: var(--color-teal);
+}
+
+.card--select .card__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-2xs);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal-70);
+  letter-spacing: 0.02em;
+}
+
+.card--select.is-active .card__meta {
+  color: var(--color-teal);
+}
+
+.card--select .card__meta svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-lime);
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.card--select.is-active .card__meta svg {
+  opacity: 1;
+}
+
+.card--route {
+  background: var(--ivory-06);
+  border: 1px solid var(--ivory-12);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  backdrop-filter: blur(6px);
+}
+
+.card--route .card__kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ivory-80);
+  margin-bottom: var(--space-2xs);
+}
+
+.card--route .card__kicker svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-lime);
+}
+
+.card--route .card__stat {
+  color: var(--color-lime);
+  font-size: clamp(30px, 3vw, 40px);
+  margin-bottom: 2px;
+}
+
+.card--route .card__label {
+  color: var(--ivory-80);
+  font-weight: 600;
+}
+
+.card--route .card__desc {
+  color: var(--ivory-80);
+  font-size: 12px;
+  margin-top: 4px;
+}

@@ -1,0 +1,49 @@
+.aksi-hero { background: var(--color-ivory); color: var(--text-primary); padding-top: var(--hero-safe-top); padding-bottom: 42px; }
+.aksi-hero__copy { max-width: 820px; }
+.aksi-plan { padding: 42px 0 84px; scroll-margin-top: 24px; }
+.aksi-plan__layout { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+.aksi-plan__intro { position: static; }
+.aksi-plan h2 { max-width: 16ch; margin: 8px 0 16px; }
+.aksi-plan__intro > p:not(.eyebrow) { color: var(--text-muted); line-height: 1.6; }
+.aksi-progress { margin-top: 28px; padding: 20px 0; border-top: 2px solid var(--color-teal); }
+.aksi-progress strong { display: inline-block; margin-right: 8px; color: var(--color-teal); font: 700 28px/1.1 var(--font-display); }
+.aksi-progress span { color: var(--text-muted); font-size: 14px; }
+.aksi-progress__rail { height: 8px; margin-top: 14px; overflow: hidden; background: var(--teal-12); border-radius: 8px; }
+.aksi-progress__rail span { display: block; width: 0; height: 100%; background: var(--color-teal); border-radius: inherit; transition: width .25s ease; }
+.aksi-list { border-top: 2px solid var(--color-teal); list-style: none; }
+.aksi-list li { border-bottom: 1px solid var(--teal-18); }
+.aksi-list label { display: grid; grid-template-columns: 24px 34px minmax(0, 1fr) 24px; gap: 14px; align-items: center; min-height: 92px; padding: 18px 8px; cursor: pointer; }
+.aksi-list label:hover { background: var(--teal-04); }
+.aksi-list label:focus-within { outline: 3px solid var(--color-teal); outline-offset: 3px; }
+.aksi-list input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.aksi-list input:focus-visible + .aksi-list__number { outline: 3px solid var(--color-teal); outline-offset: 4px; border-radius: 2px; }
+.aksi-list__number { color: var(--teal-70); font-size: 14px; font-weight: 700; }
+.aksi-list__copy { grid-column: 3; }
+.aksi-list__check { grid-column: 1; grid-row: 1 / span 2; }
+.aksi-list__copy strong { display: block; color: var(--color-teal); font: 700 clamp(18px, 2vw, 22px)/1.25 var(--font-display); }
+.aksi-list__copy small { display: block; margin-top: 5px; color: var(--text-muted); font-size: 15px; line-height: 1.5; }
+.aksi-list__check { display: grid; width: 24px; height: 24px; place-items: center; border: 1.5px solid var(--teal-40); border-radius: 4px; color: transparent; }
+.aksi-list__check::after { content: ""; width: 6px; height: 11px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-1px, -1px); }
+.aksi-list input:checked ~ .aksi-list__check { background: var(--color-teal); border-color: var(--color-teal); color: var(--color-lime); }
+.aksi-list input:focus-visible ~ .aksi-list__check { outline: 3px solid var(--color-teal); outline-offset: 3px; }
+.aksi-list input:checked ~ .aksi-list__copy strong { text-decoration: underline; text-decoration-color: var(--color-lime); text-decoration-thickness: 3px; text-underline-offset: 4px; }
+.aksi-list input:checked ~ .aksi-list__number { color: var(--color-teal); }
+.aksi-next { background: var(--color-teal); padding: 56px 0; }
+.aksi-next h2 { max-width: 22ch; margin: 10px 0 24px; color: var(--color-ivory); }
+.aksi-next .container > div { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 800px) {
+  .aksi-plan__layout { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .aksi-plan { padding: 28px 0 60px; }
+}
+@media (max-width: 520px) {
+  .aksi-hero { padding-top: var(--hero-safe-top); padding-bottom: 28px; }
+  .aksi-list label { grid-template-columns: 24px 24px minmax(0, 1fr); gap: 12px; min-height: 84px; padding: 16px 2px; }
+  .aksi-list__number { grid-column: 2; grid-row: 1 / span 2; align-self: start; padding-top: 2px; }
+  .aksi-next .container > div { flex-direction: column; }
+  .aksi-next .btn { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .aksi-progress__rail span { transition: none; } }
+.aksi-list label { grid-template-columns: 24px 28px minmax(0, 1fr); align-items: start; }
+.aksi-list__check { grid-column: 1; grid-row: 1; margin-top: 3px; }
+.aksi-list__number { grid-column: 2; grid-row: 1; margin-top: 3px; }
+.aksi-list__copy { grid-column: 3; grid-row: 1; }

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASRIA. | Lab</title>
+  <meta name="description" content="Halaman Lab ASRIA. Bagian dari alur Tahu, Paham, Ukur, Coba, Ubah." />
+  <link rel="icon" type="image/png" href="../media/asria-logo-navbar.png">
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/components/vehicle-art.css" />
+  <link rel="stylesheet" href="../css/pages/lab.css" />
+  <link rel="stylesheet" href="../css/pages/journey-hero.css" />
+  <link rel="stylesheet" href="../css/refinements.css" />
+</head>
+<body data-page="lab">
+  <a class="skip-link" href="#main-content">Langsung ke konten</a>
+
+  <header>
+    <nav class="navbar" aria-label="Navigasi utama">
+      <div class="navbar__inner">
+        <a href="../index.html" class="navbar__logo" aria-label="ASRIA, halaman utama"><img src="../media/asria-logo-navbar.png" alt="" width="48" height="48" decoding="async"></a>
+
+        <ul class="navbar__links">
+          <li><a href="../index.html" class="navbar__link">Home</a></li>
+          <li><a href="../pages/emisi.html" class="navbar__link">Emisi</a></li>
+          <li><a href="../pages/jejak.html" class="navbar__link">Jejak</a></li>
+          <li><a href="../pages/lab.html" class="navbar__link is-active" aria-current="page">Lab</a></li>
+          <li><a href="../pages/aksi.html" class="navbar__link">Aksi</a></li>
+        </ul>
+
+        <div class="navbar__right">
+          <div class="navbar__profile">
+            <button
+              class="navbar__avatar"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Buka menu profil"
+            >A</button>
+
+            <div class="navbar__dropdown" role="menu">
+              <a class="navbar__dropdown-item" role="menuitem" href="../pages/profile.html">
+                <svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+                Profile
+              </a>
+              <button class="navbar__dropdown-item" role="menuitem" type="button" data-action="logout">
+                <svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>
+                Logout
+              </button>
+            </div>
+          </div>
+
+          <button class="navbar__burger" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-navigation">
+            <svg viewBox="0 0 24 24" class="icon"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar__mobile-menu" id="mobile-navigation" aria-hidden="true" aria-label="Navigasi mobile">
+      <a href="../index.html" class="navbar__mobile-link">Home</a>
+      <a href="../pages/emisi.html" class="navbar__mobile-link">Emisi</a>
+      <a href="../pages/jejak.html" class="navbar__mobile-link">Jejak</a>
+      <a href="../pages/lab.html" class="navbar__mobile-link">Lab</a>
+      <a href="../pages/aksi.html" class="navbar__mobile-link">Aksi</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="lab-hero" aria-labelledby="lab-title">
+      <div class="container">
+        <nav class="journey-crumb" aria-label="Breadcrumb"><a href="../index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7M6 10v9h12v-9M10 19v-5h4v5"/></svg>Home</a><svg class="journey-crumb__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><span aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M4 17h10M14 4l4 3-4 3M18 14l-4 3 4 3"/></svg>Lab</span></nav>
+        <div class="journey-hero__layout"><div class="lab-hero__copy">
+          <h1 id="lab-title">Bandingkan pilihan perjalananmu.</h1>
+          <p class="lab-hero__lead">Ubah kendaraan, jarak, atau frekuensi. Lihat bagaimana perkiraan berubah pada perjalanan yang sama.</p>
+          <a class="btn btn--primary" href="#bandingkan">Atur perbandingan <span aria-hidden="true">↓</span></a>
+        </div><figure class="journey-hero__art journey-hero__art--lab lab-compare">
+          <div class="lab-compare__row" data-lab-compare="before">
+            <p class="lab-compare__caption">Contoh awal: <strong data-lab-compare-label="before">mobil</strong></p>
+            <div class="lab-compare__stage" data-lab-scene="before"></div>
+          </div>
+          <span class="lab-compare__arrow" aria-hidden="true">↓</span>
+          <div class="lab-compare__row" data-lab-compare="after">
+            <p class="lab-compare__caption">Contoh alternatif: <strong data-lab-compare-label="after">mobil</strong></p>
+            <div class="lab-compare__stage" data-lab-scene="after"></div>
+          </div>
+          <figcaption>Ilustrasi contoh. Atur pilihan dan baca hasilmu di bawah.</figcaption>
+        </figure></div>
+      </div>
+    </section>
+
+    <section class="lab-work" id="bandingkan" aria-labelledby="lab-work-title">
+      <div class="container">
+        <div class="lab-work__head">
+          <p class="eyebrow">Skenario perjalanan</p>
+          <h2 id="lab-work-title">Mulai dari rutinitas yang sama.</h2>
+          <p id="lab-source">Memakai contoh perjalanan 8 km dengan mobil, 5 kali seminggu. Ukur perjalananmu di Jejak untuk perbandingan pribadi.</p>
+        </div>
+        <div class="lab-work__grid">
+          <form class="lab-controls" aria-label="Ubah skenario perjalanan">
+            <div class="lab-field">
+              <label for="lab-vehicle">Kendaraan</label>
+              <select id="lab-vehicle" name="vehicle"></select>
+            </div>
+            <div class="lab-field">
+              <label for="lab-distance">Jarak sekali jalan <output id="lab-distance-value" for="lab-distance">8 km</output></label>
+              <input id="lab-distance" name="distance" type="range" min="1" max="30" value="8">
+              <div class="lab-field__scale" aria-hidden="true"><span>1 km</span><span>30 km</span></div>
+            </div>
+            <div class="lab-field">
+              <label for="lab-frequency">Perjalanan per minggu <output id="lab-frequency-value" for="lab-frequency">5 kali</output></label>
+              <input id="lab-frequency" name="frequency" type="range" min="1" max="7" value="5">
+              <div class="lab-field__scale" aria-hidden="true"><span>1 kali</span><span>7 kali</span></div>
+            </div>
+            <div class="lab-field">
+              <label for="lab-occupancy">Orang dalam perjalanan, termasuk kamu</label>
+              <select id="lab-occupancy" name="occupancy"></select>
+              <p id="lab-occupancy-note">Untuk bus dan kereta, faktor contoh sudah dihitung per penumpang.</p>
+            </div>
+            <button type="button" class="lab-reset" id="lab-reset">Kembali ke kondisi awal <span aria-hidden="true">↺</span></button>
+            <button type="button" class="btn btn--primary" id="lab-save">Simpan skenario</button>
+            <p id="lab-save-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="lab-result on-dark">
+            <p class="lab-result__eyebrow">Perkiraan emisi per minggu</p>
+            <div class="lab-result__row"><span>Awal</span><strong id="lab-before">7,6</strong><span>kg CO₂e</span></div>
+            <div class="lab-result__track" aria-hidden="true"><span id="lab-before-bar"></span></div>
+            <div class="lab-result__row lab-result__row--after"><span>Setelah diubah</span><strong id="lab-after">7,6</strong><span>kg CO₂e</span></div>
+            <div class="lab-result__track lab-result__track--after" aria-hidden="true"><span id="lab-after-bar"></span></div>
+            <p class="lab-result__delta" id="lab-delta" role="status" aria-live="polite">Coba ubah satu pengaturan untuk melihat perbedaannya.</p>
+            <p class="lab-result__note">Faktor emisi adalah contoh edukatif, bukan pengukuran langsung. Jalan kaki dan sepeda dihitung tanpa emisi langsung dari kendaraan.</p>
+          </div>
+        </div>
+        <div class="lab-next">
+          <p>Sudah menemukan perubahan yang masuk akal untuk rutinitasmu?</p>
+          <a href="../pages/aksi.html" class="btn btn--primary">Bawa ke Aksi <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-logo">ASRIA.</p>
+          <p class="footer__tagline">Setiap perjalanan meninggalkan jejak.</p>
+        </div>
+
+        <nav aria-label="Navigasi footer">
+          <p class="footer__heading">Jelajahi</p>
+          <ul class="footer__list">
+            <li><a href="../index.html" class="footer__link">Home</a></li>
+            <li><a href="../pages/emisi.html" class="footer__link">Emisi</a></li>
+            <li><a href="../pages/jejak.html" class="footer__link">Jejak</a></li>
+            <li><a href="../pages/lab.html" class="footer__link">Lab</a></li>
+            <li><a href="../pages/aksi.html" class="footer__link">Aksi</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__about">
+          <p class="footer__heading">Tentang proyek</p>
+          <p>ASRIA mengajakmu membaca pola perjalanan dan mencoba perubahan yang masuk akal.</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 ASRIA. Seluruh hak dilindungi.</p>
+        <span class="footer__status">Jelajahi perubahan di Lab</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
